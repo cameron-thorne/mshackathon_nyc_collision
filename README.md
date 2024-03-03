@@ -8,3 +8,12 @@ This solution does the following:
 - A standard Medallion Architecture is applied. The Lakehouse serves as Bronze, and two Warehouses serve for Silver and Gold. Via Data Factory, daily data is flowed through to Gold.
 - A semantic model built with SQL Views from Gold that uses Direct Lake mode
 - Two seperate Power BI reports were created initially using CoPilot. The reports were then reviewed and amended for more effective reporting.
+
+# Setup instructions
+
+#1. Setting up data factory pipelines 
+We have a daily pipeline that pulls in any collisions that occured in the past day where the report was filed for both Collision and Vehicle data. This data is then appended to tables in the Lakehouse named CityCrashData. After data is landed successfully, loads to Silver and then Gold happen in our Medallion Architecture. 
+
+![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/5063795f-7f46-45a3-bb15-c3f4a76db940)
+
+This job runs daily at 7:00 PM CST. 
