@@ -16,4 +16,4 @@ We have a daily pipeline that pulls in any collisions that occured in the past d
 
 ![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/5063795f-7f46-45a3-bb15-c3f4a76db940)
 
-This job runs daily at 7:00 PM CST. 
+This job runs daily at 7:00 PM Central Time (US and Canada). 
