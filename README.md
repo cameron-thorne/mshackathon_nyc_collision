@@ -33,7 +33,7 @@ You will need to create a Fabric workspace. Most files needed are in the reposit
 We need to create our inital dataset. We cannot do this via API because without registration, the API has a 1,000 row limit. We ideally only need to do this once to set up the data and then any new data will come from the API. 
 
 1. Create a Lakehouse and name it CityCrashData.
-2. Go to the NYC Open Data website for [Crashes](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data) and export the dataset as a CSV file. Because the file is large, it cannnot be hosted in a GitHub repository. Please note, there is a record in the CSV file with a line space in it. This shifts data into incorrect columns. The most simple way to remove this new line, is to use a text editor like Visual Studio Code. You will need to complete this step before you go on further.
+2. Go to the NYC Open Data website for [Crashes](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data) and export the dataset as a CSV file. Because the file is large, it cannot be hosted in a GitHub repository. Please note, there is a record in the CSV file with a line space in it. This shifts data into incorrect columns. The most simple way to remove this new line, is to use a text editor like Visual Studio Code. You will need to complete this step before you go on further.
 3. Create a folder named "NYC" in the Files folder in the Lakehouse.  
 4. Upload the CSV file with the name "CollisionsCrashes.csv".
 5. Go to the NYC Open Data website for [Vehicles](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data) and export the dataset as a CSV file.
