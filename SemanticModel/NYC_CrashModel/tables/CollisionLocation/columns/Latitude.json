@@ -1,0 +1,15 @@
+{
+  "name": "Latitude",
+  "dataType": "double",
+  "sourceColumn": "Latitude",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "f5998043-8be0-4e69-9f27-184eba2aec97",
+  "sourceLineageTag": "Latitude",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Number of Persons Killed",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Persons Killed",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "d5cb7929-3e20-4535-9ba4-10b884bf9de4",
+  "sourceLineageTag": "Number of Persons Killed",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Contributing Factor",
+  "dataType": "string",
+  "sourceColumn": "Contributing Factor",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "48ce7572-1b95-4f55-9129-6eefd2c38c5a",
+  "sourceLineageTag": "Contributing Factor",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

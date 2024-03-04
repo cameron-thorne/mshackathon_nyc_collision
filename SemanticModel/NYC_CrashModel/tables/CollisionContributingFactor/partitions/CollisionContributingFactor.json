@@ -1,0 +1,10 @@
+{
+  "name": "CollisionContributingFactor",
+  "mode": "directLake",
+  "source": {
+    "type": "entity",
+    "entityName": "vCollisionContributingFactor",
+    "expressionSource": "DatabaseQuery",
+    "schemaName": "Dim"
+  }
+}

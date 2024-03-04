@@ -1,0 +1,15 @@
+{
+  "name": "Vehicle Model",
+  "dataType": "string",
+  "sourceColumn": "Vehicle Model",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "a771d7fd-c006-4c97-b074-159ca794fa4b",
+  "sourceLineageTag": "Vehicle Model",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

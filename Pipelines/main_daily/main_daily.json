@@ -1,0 +1,792 @@
+{
+    "name": "main_daily",
+    "objectId": "f0bfd00e-bb17-4cfd-90f9-ca714622ada6",
+    "properties": {
+        "activities": [
+            {
+                "name": "Crash Data",
+                "type": "Copy",
+                "dependsOn": [
+                    {
+                        "activity": "Set variable Yesterday",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "RestSource",
+                        "httpRequestTimeout": "00:01:40",
+                        "requestInterval": "00.00:00:00.010",
+                        "requestMethod": "GET",
+                        "paginationRules": {
+                            "supportRFC5988": "true"
+                        },
+                        "datasetSettings": {
+                            "annotations": [],
+                            "type": "RestResource",
+                            "typeProperties": {
+                                "relativeUrl": {
+                                    "value": "resource/h9gi-nx95.json?crash_date=@{variables('Yesterday')}T00:00:00.000",
+                                    "type": "Expression"
+                                }
+                            },
+                            "schema": [],
+                            "externalReferences": {
+                                "connection": "879ae341-8b3b-4155-a155-28465749ba8a"
+                            }
+                        }
+                    },
+                    "sink": {
+                        "type": "LakehouseTableSink",
+                        "tableActionOption": "Append",
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "CityCrashData",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "Lakehouse",
+                                    "typeProperties": {
+                                        "workspaceId": "48fd17ca-aeff-44b8-9582-1e2cf6eaa9fd",
+                                        "artifactId": "bf5725ea-3363-4b0a-9cdc-fd52efdc7997",
+                                        "rootFolder": "Tables"
+                                    }
+                                }
+                            },
+                            "type": "LakehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "table": "bronze_nyc_crashes"
+                            }
+                        }
+                    },
+                    "enableStaging": false,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "mappings": [
+                            {
+                                "source": {
+                                    "name": "crash_date",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CRASH_DATE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "crash_time",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CRASH_TIME",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "borough",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "BOROUGH",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "zip_code",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "ZIP_CODE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "latitude",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "LATITUDE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "longitude",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "LONGITUDE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "location",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "LOCATION",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "on_street_name",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "ON_STREET_NAME",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "cross_street_name",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CROSS_STREET_NAME",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "off_street_name",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "OFF_STREET_NAME",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_persons_injured",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_PERSONS_INJURED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_persons_killed",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_PERSONS_KILLED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_pedestrians_injured",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_PEDESTRIANS_INJURED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_pedestrians_killed",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_PEDESTRIANS_KILLED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_cyclist_injured",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_CYCLIST_INJURED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_cyclist_killed",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_CYCLIST_KILLED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_motorist_injured",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_MOTORIST_INJURED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "number_of_motorist_killed",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "NUMBER_OF_MOTORIST_KILLED",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "contributing_factor_vehicle_1",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CONTRIBUTING_FACTOR_VEHICLE_1",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "contributing_factor_vehicle_2",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CONTRIBUTING_FACTOR_VEHICLE_2",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "contributing_factor_vehicle_3",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CONTRIBUTING_FACTOR_VEHICLE_3",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "contributing_factor_vehicle_4",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CONTRIBUTING_FACTOR_VEHICLE_4",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "contributing_factor_vehicle_5",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CONTRIBUTING_FACTOR_VEHICLE_5",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "collision_id",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "COLLISION_ID",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_type_code_1",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_TYPE_CODE_1",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_type_code_2",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_TYPE_CODE_2",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_type_code_3",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_TYPE_CODE_3",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_type_code_4",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_TYPE_CODE_4",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_type_code_5",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_TYPE_CODE_5",
+                                    "physicalType": "string"
+                                }
+                            }
+                        ],
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        },
+                        "columnFlattenSettings": {
+                            "treatArrayAsString": false,
+                            "treatStructAsString": false,
+                            "flattenColumnDelimiter": "."
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Set variable Yesterday",
+                "type": "SetVariable",
+                "dependsOn": [],
+                "policy": {
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "variableName": "Yesterday",
+                    "value": {
+                        "value": "@addDays(utcNow(),-1, 'yyyy-MM-dd')",
+                        "type": "Expression"
+                    }
+                }
+            },
+            {
+                "name": "Vehicle Data",
+                "type": "Copy",
+                "dependsOn": [
+                    {
+                        "activity": "Set variable Yesterday",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "RestSource",
+                        "httpRequestTimeout": "00:01:40",
+                        "requestInterval": "00.00:00:00.010",
+                        "requestMethod": "GET",
+                        "paginationRules": {
+                            "supportRFC5988": "true"
+                        },
+                        "datasetSettings": {
+                            "annotations": [],
+                            "type": "RestResource",
+                            "typeProperties": {
+                                "relativeUrl": {
+                                    "value": "resource/bm4k-52h4.json?crash_date=@{variables('Yesterday')}T00:00:00.000\n",
+                                    "type": "Expression"
+                                }
+                            },
+                            "schema": [],
+                            "externalReferences": {
+                                "connection": "879ae341-8b3b-4155-a155-28465749ba8a"
+                            }
+                        }
+                    },
+                    "sink": {
+                        "type": "LakehouseTableSink",
+                        "tableActionOption": "Append",
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "CityCrashData",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "Lakehouse",
+                                    "typeProperties": {
+                                        "workspaceId": "48fd17ca-aeff-44b8-9582-1e2cf6eaa9fd",
+                                        "artifactId": "bf5725ea-3363-4b0a-9cdc-fd52efdc7997",
+                                        "rootFolder": "Tables"
+                                    }
+                                }
+                            },
+                            "type": "LakehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "table": "bronze_nyc_vehicles"
+                            }
+                        }
+                    },
+                    "enableStaging": false,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "mappings": [
+                            {
+                                "source": {
+                                    "name": "unique_id",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "UNIQUE_ID",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "collision_id",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "COLLISION_ID",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "crash_date",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CRASH_DATE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "crash_time",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CRASH_TIME",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_id",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_ID",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "state_registration",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "STATE_REGISTRATION",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_type",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_TYPE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_make",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_MAKE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_model",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_MODEL",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_year",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_YEAR",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "travel_direction",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "TRAVEL_DIRECTION",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_occupants",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_OCCUPANTS",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "driver_sex",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "DRIVER_SEX",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "driver_license_status",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "DRIVER_LICENSE_STATUS",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "driver_license_jurisdiction",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "DRIVER_LICENSE_JURISDICTION",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "pre_crash",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "PRE_CRASH",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "point_of_impact",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "POINT_OF_IMPACT",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_damage",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_DAMAGE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_damage_1",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_DAMAGE_1",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_damage_2",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_DAMAGE_2",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "vehicle_damage_3",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "VEHICLE_DAMAGE_3",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "public_property_damage",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "PUBLIC_PROPERTY_DAMAGE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "public_property_damage_type",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "PUBLIC_PROPERTY_DAMAGE_TYPE",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "contributing_factor_1",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CONTRIBUTING_FACTOR_1",
+                                    "physicalType": "string"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "contributing_factor_2",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "CONTRIBUTING_FACTOR_2",
+                                    "physicalType": "string"
+                                }
+                            }
+                        ],
+                        "collectionReference": "",
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        },
+                        "columnFlattenSettings": {
+                            "treatArrayAsString": false,
+                            "treatStructAsString": false,
+                            "flattenColumnDelimiter": "."
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Invoke Silver_Load",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "Crash Data",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    },
+                    {
+                        "activity": "Vehicle Data",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "e07af658-0f05-41a0-9c8e-3848658e9873",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true
+                }
+            },
+            {
+                "name": "Invoke Gold_Load",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "Invoke Silver_Load",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "a906c807-8155-4aeb-bdc1-8a45e3d143e9",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true
+                }
+            }
+        ],
+        "variables": {
+            "Yesterday": {
+                "type": "String",
+                "defaultValue": "1900-01-01"
+            }
+        },
+        "annotations": [],
+        "lastModifiedByObjectId": "640a77b0-4874-4998-80f4-897e0c62500d",
+        "lastPublishTime": "2024-03-01T21:40:02Z"
+    }
+}

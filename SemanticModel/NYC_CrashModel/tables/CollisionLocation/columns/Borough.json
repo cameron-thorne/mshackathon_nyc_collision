@@ -1,0 +1,15 @@
+{
+  "name": "Borough",
+  "dataType": "string",
+  "sourceColumn": "Borough",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "5a0ec77a-6109-4b7f-911a-03a712d74f2d",
+  "sourceLineageTag": "Borough",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

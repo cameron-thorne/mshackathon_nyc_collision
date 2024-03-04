@@ -1,0 +1,10 @@
+{
+  "name": "Vehicle",
+  "mode": "directLake",
+  "source": {
+    "type": "entity",
+    "entityName": "vVehicle",
+    "expressionSource": "DatabaseQuery",
+    "schemaName": "Dim"
+  }
+}

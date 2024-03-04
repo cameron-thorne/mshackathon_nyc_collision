@@ -1,0 +1,15 @@
+{
+  "name": "Cross Street Name",
+  "dataType": "string",
+  "sourceColumn": "Cross Street Name",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "bf527898-a33a-4356-a54a-9d479670c5b5",
+  "sourceLineageTag": "Cross Street Name",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

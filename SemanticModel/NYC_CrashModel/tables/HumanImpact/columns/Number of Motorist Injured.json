@@ -1,0 +1,17 @@
+{
+  "name": "Number of Motorist Injured",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Motorist Injured",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "440add41-22ef-40ee-b7b6-98d14cd9051d",
+  "sourceLineageTag": "Number of Motorist Injured",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Number of Pedestrians Injured",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Pedestrians Injured",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "34536d15-4f49-4e99-a23e-57b88d75347e",
+  "sourceLineageTag": "Number of Pedestrians Injured",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

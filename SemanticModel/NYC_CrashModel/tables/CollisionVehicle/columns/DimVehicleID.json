@@ -1,0 +1,16 @@
+{
+  "name": "DimVehicleID",
+  "dataType": "int64",
+  "sourceColumn": "DimVehicleID",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "9c4a2206-fc6c-42c8-93ed-54371f24dd42",
+  "sourceLineageTag": "DimVehicleID",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

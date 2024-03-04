@@ -1,0 +1,10 @@
+{
+  "name": "ContributingFactor",
+  "mode": "directLake",
+  "source": {
+    "type": "entity",
+    "entityName": "vContributingFactor",
+    "expressionSource": "DatabaseQuery",
+    "schemaName": "Dim"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "DimContributingFactorID",
+  "dataType": "int64",
+  "sourceColumn": "DimContributingFactorID",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "f9560e8d-2379-4f61-8ff0-436f3af2c61f",
+  "sourceLineageTag": "DimContributingFactorID",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

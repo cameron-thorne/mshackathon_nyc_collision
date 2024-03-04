@@ -1,0 +1,16 @@
+{
+  "name": "DimDateId",
+  "dataType": "int64",
+  "sourceColumn": "DimDateId",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "3983fd67-00fa-4bf9-b96c-7fefeee1dd53",
+  "sourceLineageTag": "DimDateId",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

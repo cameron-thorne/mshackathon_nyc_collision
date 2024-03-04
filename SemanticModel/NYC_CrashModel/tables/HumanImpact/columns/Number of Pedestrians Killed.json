@@ -1,0 +1,17 @@
+{
+  "name": "Number of Pedestrians Killed",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Pedestrians Killed",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "7329a9a8-94e6-4787-9588-e7dd3d47d487",
+  "sourceLineageTag": "Number of Pedestrians Killed",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

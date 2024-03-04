@@ -1,0 +1,15 @@
+{
+  "name": "Collision",
+  "lineageTag": "a5465d15-68a0-40da-a7da-0c0b200fd5c0",
+  "sourceLineageTag": "[Dim].[vCollision]",
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table"
+    },
+    {
+      "name": "TabularEditor_Relationships",
+      "value": "[]"
+    }
+  ]
+}

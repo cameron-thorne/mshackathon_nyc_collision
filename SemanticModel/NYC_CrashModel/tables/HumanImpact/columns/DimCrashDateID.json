@@ -1,0 +1,17 @@
+{
+  "name": "DimCrashDateID",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "DimCrashDateID",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "87c9c293-d76b-4055-b117-67eb2cb7fe19",
+  "sourceLineageTag": "DimCrashDateID",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

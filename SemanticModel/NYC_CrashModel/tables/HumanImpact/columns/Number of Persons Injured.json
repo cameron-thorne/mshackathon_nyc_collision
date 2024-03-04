@@ -1,0 +1,17 @@
+{
+  "name": "Number of Persons Injured",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Persons Injured",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "80fb5ff5-8f59-4f98-9ade-9a0bc78e5cb5",
+  "sourceLineageTag": "Number of Persons Injured",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

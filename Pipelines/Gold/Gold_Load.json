@@ -1,0 +1,246 @@
+{
+    "name": "Gold_Load",
+    "objectId": "a906c807-8155-4aeb-bdc1-8a45e3d143e9",
+    "properties": {
+        "activities": [
+            {
+                "name": "Load_Dim_CollisionLocation",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[Dim].[CollisionLocationMerge]"
+                },
+                "linkedService": {
+                    "name": "Gold",
+                    "objectId": "176be38f-0619-4842-ac7e-e58de0793f45",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "176be38f-0619-4842-ac7e-e58de0793f45"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            },
+            {
+                "name": "Load_Dim_Vehicle",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[Dim].[VehicleMerge]"
+                },
+                "linkedService": {
+                    "name": "Gold",
+                    "objectId": "176be38f-0619-4842-ac7e-e58de0793f45",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "176be38f-0619-4842-ac7e-e58de0793f45"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            },
+            {
+                "name": "Load_Dim_ContributingFactor",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[Dim].[ContributingFactorMerge]"
+                },
+                "linkedService": {
+                    "name": "Gold",
+                    "objectId": "176be38f-0619-4842-ac7e-e58de0793f45",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "176be38f-0619-4842-ac7e-e58de0793f45"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            },
+            {
+                "name": "Load_Dim_Collision_ContributingFactor",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [
+                    {
+                        "activity": "Load_Dim_CollisionVehicle",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[Dim].[CollisionContributingFactorInsert]"
+                },
+                "linkedService": {
+                    "name": "Gold",
+                    "objectId": "176be38f-0619-4842-ac7e-e58de0793f45",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "176be38f-0619-4842-ac7e-e58de0793f45"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            },
+            {
+                "name": "Load_Dim_CollisionVehicle",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [
+                    {
+                        "activity": "Load_Dim_Vehicle",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    },
+                    {
+                        "activity": "Load_Dim_Collision",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    },
+                    {
+                        "activity": "Load_Dim_ContributingFactor",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    },
+                    {
+                        "activity": "Load_Dim_CollisionLocation",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[Dim].[CollisionVehicleInsert]"
+                },
+                "linkedService": {
+                    "name": "Gold",
+                    "objectId": "176be38f-0619-4842-ac7e-e58de0793f45",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "176be38f-0619-4842-ac7e-e58de0793f45"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            },
+            {
+                "name": "Load_Dim_Collision",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[Dim].[CollisionMerge]"
+                },
+                "linkedService": {
+                    "name": "Gold",
+                    "objectId": "176be38f-0619-4842-ac7e-e58de0793f45",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "176be38f-0619-4842-ac7e-e58de0793f45"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            },
+            {
+                "name": "Load_Fact_HumanImpact",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [
+                    {
+                        "activity": "Load_Dim_Collision_ContributingFactor",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[Fact].[HumanImpactInsert]"
+                },
+                "linkedService": {
+                    "name": "Gold",
+                    "objectId": "176be38f-0619-4842-ac7e-e58de0793f45",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "176be38f-0619-4842-ac7e-e58de0793f45"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            }
+        ],
+        "annotations": [],
+        "lastModifiedByObjectId": "640a77b0-4874-4998-80f4-897e0c62500d",
+        "lastPublishTime": "2024-02-27T02:19:30Z"
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "TravelDirection",
+  "dataType": "string",
+  "sourceColumn": "TravelDirection",
+  "lineageTag": "a8f4e4c0-96cb-4c84-a969-72102226f60b",
+  "summarizeBy": "none"
+}

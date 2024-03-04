@@ -1,0 +1,7 @@
+{
+  "name": "Total Number of Pedestrians Killed",
+  "description": "This measure is the sum of column 'HumanImpact'[Number of Pedestrians Killed]",
+  "expression": "SUM('HumanImpact'[Number of Pedestrians Killed])",
+  "formatString": "#,##0",
+  "lineageTag": "8ff0fb74-ba82-43e1-a30e-e6aae2b2a61b"
+}

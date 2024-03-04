@@ -1,0 +1,17 @@
+{
+  "name": "Number of Motorist Killed",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Motorist Killed",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "1470f118-d7bb-47fe-b434-330c738958c4",
+  "sourceLineageTag": "Number of Motorist Killed",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

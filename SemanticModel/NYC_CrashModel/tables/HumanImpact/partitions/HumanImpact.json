@@ -1,0 +1,10 @@
+{
+  "name": "HumanImpact",
+  "mode": "directLake",
+  "source": {
+    "type": "entity",
+    "entityName": "vHumanImpact",
+    "expressionSource": "DatabaseQuery",
+    "schemaName": "Fact"
+  }
+}

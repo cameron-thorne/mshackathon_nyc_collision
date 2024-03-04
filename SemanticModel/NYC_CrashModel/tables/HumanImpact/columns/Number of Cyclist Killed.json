@@ -1,0 +1,17 @@
+{
+  "name": "Number of Cyclist Killed",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Cyclist Killed",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "a767867a-7caa-4d42-a923-d531073bb5fe",
+  "sourceLineageTag": "Number of Cyclist Killed",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

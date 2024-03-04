@@ -1,0 +1,15 @@
+{
+  "name": "State Registration",
+  "dataType": "string",
+  "sourceColumn": "State Registration",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "c77aa071-3b88-4b14-b717-e3eefb2ae7ea",
+  "sourceLineageTag": "State Registration",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Date",
+  "mode": "directLake",
+  "source": {
+    "type": "entity",
+    "entityName": "vDate",
+    "expressionSource": "DatabaseQuery",
+    "schemaName": "Dim"
+  }
+}

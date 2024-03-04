@@ -1,0 +1,336 @@
+{
+    "name": "Silver_Load",
+    "objectId": "e07af658-0f05-41a0-9c8e-3848658e9873",
+    "properties": {
+        "activities": [
+            {
+                "name": "Copy_bronze_nyc_crashes",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "LakehouseTableSource",
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "CityCrashData",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "Lakehouse",
+                                    "typeProperties": {
+                                        "workspaceId": "48fd17ca-aeff-44b8-9582-1e2cf6eaa9fd",
+                                        "artifactId": "bf5725ea-3363-4b0a-9cdc-fd52efdc7997",
+                                        "rootFolder": "Tables"
+                                    }
+                                }
+                            },
+                            "type": "LakehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "table": "bronze_nyc_crashes"
+                            }
+                        }
+                    },
+                    "sink": {
+                        "type": "DataWarehouseSink",
+                        "preCopyScript": "DELETE FROM dbo.silver_nyc_crashes",
+                        "allowCopyCommand": true,
+                        "disableMetricsCollection": false,
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "Silver",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "DataWarehouse",
+                                    "typeProperties": {
+                                        "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                                        "artifactId": "9e8d7e23-157a-4bfe-9e10-0e4713b6fdbe"
+                                    }
+                                }
+                            },
+                            "type": "DataWarehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "schema": "dbo",
+                                "table": "silver_nyc_crashes"
+                            }
+                        }
+                    },
+                    "enableStaging": true,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Copy_bronze_nyc_vehicles",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "LakehouseTableSource",
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "CityCrashData",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "Lakehouse",
+                                    "typeProperties": {
+                                        "workspaceId": "48fd17ca-aeff-44b8-9582-1e2cf6eaa9fd",
+                                        "artifactId": "bf5725ea-3363-4b0a-9cdc-fd52efdc7997",
+                                        "rootFolder": "Tables"
+                                    }
+                                }
+                            },
+                            "type": "LakehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "table": "bronze_nyc_vehicles"
+                            }
+                        }
+                    },
+                    "sink": {
+                        "type": "DataWarehouseSink",
+                        "preCopyScript": "DELETE FROM dbo.silver_nyc_vehicles",
+                        "allowCopyCommand": true,
+                        "disableMetricsCollection": false,
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "Silver",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "DataWarehouse",
+                                    "typeProperties": {
+                                        "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                                        "artifactId": "9e8d7e23-157a-4bfe-9e10-0e4713b6fdbe"
+                                    }
+                                }
+                            },
+                            "type": "DataWarehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "schema": "dbo",
+                                "table": "silver_nyc_vehicles"
+                            }
+                        }
+                    },
+                    "enableStaging": true,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Copy_bronze_us_zip",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "LakehouseTableSource",
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "CityCrashData",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "Lakehouse",
+                                    "typeProperties": {
+                                        "workspaceId": "48fd17ca-aeff-44b8-9582-1e2cf6eaa9fd",
+                                        "artifactId": "bf5725ea-3363-4b0a-9cdc-fd52efdc7997",
+                                        "rootFolder": "Tables"
+                                    }
+                                }
+                            },
+                            "type": "LakehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "table": "bronze_us_zip"
+                            }
+                        }
+                    },
+                    "sink": {
+                        "type": "DataWarehouseSink",
+                        "preCopyScript": "DELETE FROM dbo.lookup_uszip",
+                        "allowCopyCommand": true,
+                        "disableMetricsCollection": false,
+                        "datasetSettings": {
+                            "annotations": [],
+                            "linkedService": {
+                                "name": "Silver",
+                                "properties": {
+                                    "annotations": [],
+                                    "type": "DataWarehouse",
+                                    "typeProperties": {
+                                        "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                                        "artifactId": "9e8d7e23-157a-4bfe-9e10-0e4713b6fdbe"
+                                    }
+                                }
+                            },
+                            "type": "DataWarehouseTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "schema": "dbo",
+                                "table": "lookup_uszip"
+                            }
+                        }
+                    },
+                    "enableStaging": true,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "mappings": [
+                            {
+                                "source": {
+                                    "name": "zip",
+                                    "type": "Int32",
+                                    "physicalType": "integer"
+                                },
+                                "sink": {
+                                    "name": "zip",
+                                    "type": "Int32",
+                                    "physicalType": "int"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "lat",
+                                    "type": "Double",
+                                    "physicalType": "double"
+                                },
+                                "sink": {
+                                    "name": "lat",
+                                    "type": "Double",
+                                    "physicalType": "float"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "lng",
+                                    "type": "Double",
+                                    "physicalType": "double"
+                                },
+                                "sink": {
+                                    "name": "lng",
+                                    "type": "Double",
+                                    "physicalType": "float"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "city",
+                                    "type": "String",
+                                    "physicalType": "string"
+                                },
+                                "sink": {
+                                    "name": "city",
+                                    "type": "String",
+                                    "physicalType": "nvarchar"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "state_id",
+                                    "type": "String",
+                                    "physicalType": "string"
+                                },
+                                "sink": {
+                                    "name": "state_id",
+                                    "type": "String",
+                                    "physicalType": "nvarchar"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "county_name",
+                                    "type": "String",
+                                    "physicalType": "string"
+                                },
+                                "sink": {
+                                    "name": "county_name",
+                                    "type": "String",
+                                    "physicalType": "nvarchar"
+                                }
+                            }
+                        ],
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Clean bad VEHICLE_IDs",
+                "type": "SqlServerStoredProcedure",
+                "dependsOn": [
+                    {
+                        "activity": "Copy_bronze_nyc_vehicles",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "storedProcedureName": "[dbo].[CleanBadVehicleIDs]"
+                },
+                "linkedService": {
+                    "name": "Silver",
+                    "objectId": "9e8d7e23-157a-4bfe-9e10-0e4713b6fdbe",
+                    "properties": {
+                        "annotations": [],
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                            "endpoint": "efth2vjhxfduvliryytl5xgzyu-zil72sh7v24ejfmcdywpn2vj7u.datawarehouse.fabric.microsoft.com",
+                            "artifactId": "9e8d7e23-157a-4bfe-9e10-0e4713b6fdbe"
+                        },
+                        "tridentArtifactType": "DataWarehouse"
+                    }
+                }
+            }
+        ],
+        "annotations": [],
+        "lastModifiedByObjectId": "640a77b0-4874-4998-80f4-897e0c62500d",
+        "lastPublishTime": "2024-02-29T02:31:06Z"
+    }
+}

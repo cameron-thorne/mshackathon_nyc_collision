@@ -1,0 +1,15 @@
+{
+  "name": "On Street Name",
+  "dataType": "string",
+  "sourceColumn": "On Street Name",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "be878f71-6836-4884-98d7-7a48951c3a1c",
+  "sourceLineageTag": "On Street Name",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

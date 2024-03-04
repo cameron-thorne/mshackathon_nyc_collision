@@ -1,0 +1,16 @@
+{
+  "name": "Date",
+  "lineageTag": "f339baa7-4fe2-4123-9672-06785aeb55f5",
+  "sourceLineageTag": "[Dim].[vDate]",
+  "dataCategory": "Time",
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table"
+    },
+    {
+      "name": "TabularEditor_Relationships",
+      "value": "[]"
+    }
+  ]
+}

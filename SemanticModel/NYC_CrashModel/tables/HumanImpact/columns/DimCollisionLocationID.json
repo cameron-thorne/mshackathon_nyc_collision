@@ -1,0 +1,17 @@
+{
+  "name": "DimCollisionLocationID",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "DimCollisionLocationID",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "7e0c010e-a0f2-4762-8985-7527704d283c",
+  "sourceLineageTag": "DimCollisionLocationID",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

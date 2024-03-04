@@ -1,0 +1,10 @@
+{
+  "name": "CollisionVehicle",
+  "mode": "directLake",
+  "source": {
+    "type": "entity",
+    "entityName": "vCollisionVehicle",
+    "expressionSource": "DatabaseQuery",
+    "schemaName": "Dim"
+  }
+}

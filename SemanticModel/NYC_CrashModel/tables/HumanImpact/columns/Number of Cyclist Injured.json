@@ -1,0 +1,17 @@
+{
+  "name": "Number of Cyclist Injured",
+  "dataType": "int64",
+  "isHidden": true,
+  "sourceColumn": "Number of Cyclist Injured",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "2899e8eb-3367-43f4-a233-46fa44b7cc4e",
+  "sourceLineageTag": "Number of Cyclist Injured",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

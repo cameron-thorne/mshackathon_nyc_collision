@@ -1,0 +1,16 @@
+{
+  "name": "Month Name",
+  "dataType": "string",
+  "sourceColumn": "Month Name",
+  "sortByColumn": "Month Number",
+  "sourceProviderType": "varchar(8000)",
+  "lineageTag": "250d07cc-8091-45f0-a695-dd877997d1b6",
+  "sourceLineageTag": "Month Name",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

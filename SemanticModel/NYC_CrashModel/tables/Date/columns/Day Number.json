@@ -1,0 +1,16 @@
+{
+  "name": "Day Number",
+  "dataType": "int64",
+  "sourceColumn": "Day Number",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "9321bff3-4d2b-4dcd-9bd9-a03a8898b625",
+  "sourceLineageTag": "Day Number",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

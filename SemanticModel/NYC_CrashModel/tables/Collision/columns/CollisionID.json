@@ -1,0 +1,16 @@
+{
+  "name": "CollisionID",
+  "dataType": "int64",
+  "sourceColumn": "CollisionID",
+  "formatString": "0",
+  "sourceProviderType": "int",
+  "lineageTag": "ae92b2ce-189b-4e57-acb2-3f24830a48b7",
+  "sourceLineageTag": "CollisionID",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

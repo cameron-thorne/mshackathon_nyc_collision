@@ -1,0 +1,21 @@
+{
+  "name": "Calendar Date",
+  "dataType": "dateTime",
+  "isKey": true,
+  "sourceColumn": "Calendar Date",
+  "formatString": "General Date",
+  "sourceProviderType": "date",
+  "lineageTag": "81983a0b-4c8a-4a24-b64c-43b877bac0da",
+  "sourceLineageTag": "Calendar Date",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    },
+    {
+      "name": "TabularEditor_MarkAsDateKey",
+      "value": "1"
+    }
+  ]
+}
