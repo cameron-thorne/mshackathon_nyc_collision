@@ -1,5 +1,6 @@
 # Power Bi Reports for Vehicle Collisions in New York City, NY built in Fabric 
-In New York City in the United States, a standard policy report is required, when a vehicle collison occurs where someone is injured, killed, or if there is at least $1,000 worth of damage. This data is collected and published online to New York City's Open Data initative.
+
+In New York City in the United States, a standard police report is required when a vehicle collison occurs where someone is injured, killed, or if there is at least $1,000 worth of damage. This data is collected and published online as an open data source at [NYC Open Data](https://opendata.cityofnewyork.us/).
 
 The two datasets used are Crashes and Vehicles per the URL's below:
 
@@ -15,6 +16,7 @@ The scenario is to provide Power BI reports that are updated daily to provide de
 
 
 This solution does the following in a Fabric workspace:
+- Uses notebooks and PySpark to load intial CSV files as delta tables into a Lakehouse. 
 - Uses Data Factory to pull collison and vehicles involved data on a daily basis via an API call to New York City's Open Data website and lands it in a Lakehouse as tables. Data can be explored via the SQL Analytics Endpoint or PySpark/Spark SQL using a notebook.
 - A standard Medallion Architecture is applied. The Lakehouse serves as Bronze, and two Warehouses serve for Silver and Gold. Via Data Factory, daily data is flowed through to Gold. CoPilot was used to help with creating some pipelines and for questions. 
 - A semantic model built with SQL Views from Gold that uses Direct Lake mode.
@@ -25,6 +27,7 @@ This solution does the following in a Fabric workspace:
 You will need to create a Fabric workspace. Most files needed are in the repository but some are not because of current limitations of GIT versioning in Fabric as of 3/3/2024. 
 
 ## Get inital data and load into Lakehouse
+
 We need to create our inital dataset. We cannot do this via API because without registration, the API has a 1,000 row limit. We ideally only need to do this once to set up the data and then any new data will come from the API. 
 
 1. Create a Lakehouse and name it CityCrashData.
@@ -45,7 +48,8 @@ We need to create our inital dataset. We cannot do this via API because without 
 1. Create a Warehouse named "Gold".
 2. Run the SQL scripts in the Gold folder in Warehouses to create tables, views, and stored procedures.
 
-## Set up Silver_Load PipelinesNote, currently, there is no feature to upload pipelines from JSON files. It's a feature that Microsoft is working on and this will change when it becomes available. 
+## Set up Silver_Load Pipelines 
+
 Note, currently, there is no feature to upload pipelines from JSON files. It's a feature that Microsoft is working on and this will change when it becomes available. 
 
 1. Create a pipeline with the name "Silver_Load".  
@@ -53,6 +57,7 @@ Note, currently, there is no feature to upload pipelines from JSON files. It's a
    ![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/c8b315e6-50b8-476d-94c6-412a0a781b12)
 
 ## Set up Gold_Load Pipeline
+
 Note, currently, there is no feature to upload pipelines from JSON files. It's a feature that Microsoft is working on and this will change when it becomes available. 
 
 1. Create a pipeline with the name "Gold_Load"
@@ -60,6 +65,7 @@ Note, currently, there is no feature to upload pipelines from JSON files. It's a
    ![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/74e9433b-2296-40c8-80cf-3df630c407c1)
 
 ## Set up main_daily Pipeline
+
 Note, currently, there is no feature to upload pipelines from JSON files. It's a feature that Microsoft is working on and this will change when it becomes available. 
 
 1. Create a pipeline with the name "main_daily".
@@ -77,7 +83,7 @@ We created our semantic model using Tabular Editor 3 Enterprise.
 4. Save the changes to the database.
 5. Refresh the model.
 
-## Set up the Power BI reports. 
+## Set up the Power BI reports
 
 Complete the following for the two PBIX files in the Reports repository folder.
 
