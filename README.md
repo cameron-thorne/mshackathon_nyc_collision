@@ -1,5 +1,5 @@
 # Power BI Reports for Vehicle Collisions in New York City, NY built in Fabric 
-In New York City in the United States, a standard police report is required when a vehicle collison occurs where someone is injured, killed, or if there is at least $1,000 worth of damage. This data is collected and published online as an open data source at [NYC Open Data](https://opendata.cityofnewyork.us/) and is updated daily. 
+In New York City in the United States, a standard police report is required when a vehicle collision occurs where someone is injured, killed, or if there is at least $1,000 worth of damage. This data is collected and published online as an open data source at [NYC Open Data](https://opendata.cityofnewyork.us/) and is updated daily. 
 
 The two datasets used are Crashes and Vehicles per the URL's below:
 
