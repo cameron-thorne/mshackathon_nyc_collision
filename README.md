@@ -22,6 +22,9 @@ This solution does the following in a Fabric workspace:
 - A semantic model built with SQL Views from Gold that uses Direct Lake mode.
 - Two seperate Power BI reports were created initially using CoPilot. The reports were then reviewed and amended for more effective reporting.
 
+  ![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/02182050-c1f5-43f5-a20f-48c9fd062834)
+
+
 # Setup instructions
 
 You will need to create a Fabric workspace. Most files needed are in the repository but some are not because of current limitations of GIT versioning in Fabric as of 3/3/2024. 
