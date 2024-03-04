@@ -1,6 +1,5 @@
 # Power BI Reports for Vehicle Collisions in New York City, NY built in Fabric 
-
-In New York City in the United States, a standard police report is required when a vehicle collison occurs where someone is injured, killed, or if there is at least $1,000 worth of damage. This data is collected and published online as an open data source at [NYC Open Data](https://opendata.cityofnewyork.us/).
+In New York City in the United States, a standard police report is required when a vehicle collison occurs where someone is injured, killed, or if there is at least $1,000 worth of damage. This data is collected and published online as an open data source at [NYC Open Data](https://opendata.cityofnewyork.us/) and is updated daily. 
 
 The two datasets used are Crashes and Vehicles per the URL's below:
 
@@ -8,7 +7,7 @@ The two datasets used are Crashes and Vehicles per the URL's below:
 
 [Vehicles](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data)
 
-The scenario is to provide Power BI reports that are updated daily to provide descriptive analytics and insight into location, contributing factors, and vehicle types for vehicle collisions. 
+The scenario is to provide Power BI reports that are updated daily to provide descriptive analytics and insight into location, contributing factors, and vehicle types for vehicle collisions using Fabric and CoPilot. This solution also provides foundations for other personas like Data Analysts and Data Scientists for future work.
 
 ![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/54d04885-d468-42f3-b78f-585d66aba3bf)
 
