@@ -7,7 +7,12 @@ The two datasets used are Crashes and Vehicles per the URL's below:
 
 [Vehicles](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Vehicles/bm4k-52h4/about_data)
 
-The scenario is to provide live Power BI report to provide descriptive analytics and insight into location, contributing factors, and vehicle types for vehicle collisions. 
+The scenario is to provide Power BI reports that are updated daily to provide descriptive analytics and insight into location, contributing factors, and vehicle types for vehicle collisions. 
+
+![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/54d04885-d468-42f3-b78f-585d66aba3bf)
+
+![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/aa3c591b-e912-4172-8b50-8eb6ff8806db)
+
 
 This solution does the following in a Fabric workspace:
 - Uses Data Factory to pull collison and vehicles involved data on a daily basis via an API call to New York City's Open Data website and lands it in a Lakehouse as tables. Data can be explored via the SQL Analytics Endpoint or PySpark/Spark SQL using a notebook.
@@ -61,6 +66,24 @@ Note, currently, there is no feature to upload pipelines from JSON files. It's a
 2. Set it up per the image below and details from the JSON file for main_daily in the Pipelines folder.
    ![image](https://github.com/cameron-thorne/mshackathon_nyc_collision/assets/13606996/5e5adcf3-e0e5-4310-9844-31ce86ab9965)
 3. Set up scheduled run for time you prefer. We set ours to run at daily at 7:00 PM Central (United States).
+
+## Set up semantic model
+
+We created our semantic model using Tabular Editor 3 Enterprise. 
+
+1. Create a Semantic Model named "NYC_CrashModel".
+2. Connect to the model using Tabular Editor 3 and save the model's TOM to a folder with a working database connection to Fabric locally on your computer.
+3. Copy the contents of the "tables" folder in Semantic/NYC_CrashModel file path in the repository to the tables folder on your local computer.
+4. Save the changes to the database.
+5. Refresh the model.
+
+## Set up the Power BI reports. 
+
+Complete the following for the two PBIX files in the Reports repository folder.
+
+1. Open the PBIX file with Power BI Desktop.
+2. Go to Data Source Settings and switch to the semantic model NYC_CrashModel that you created.
+3. Publish the report to the Fabric workspace.
 
 
 
